@@ -1,0 +1,21 @@
+body{
+  font-family: sans-serif;
+}
+#mainContent{
+  background-color: inherit;
+  margin: 50px;
+  padding: 20px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th{
+  background-color: rgb(255, 128, 128);
+}
+.nameCell, .idCell{
+  background-color: rgb(205, 133, 63);
+}
+button{
+  margin-top: 30px;
+  border-radius: 3px;
+}

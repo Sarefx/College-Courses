@@ -1,0 +1,54 @@
+<DOCTYPE html>
+  <html>
+  <head>
+    <title>Grade Book</title>
+    <link rel="stylesheet" href="css.css">
+    <script>
+      function myFunction(){
+        var studentID = prompt("Enter Student ID");
+        var column = prompt("Enter 2 for HW1, 3 for HW2, 4 for Midterm, 5 for Final Exam");
+        var grade = prompt("Enter Grade");
+        document.getElementById(studentID + "" + column).innerHTML = grade;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="mainContent">
+    <table id="theTable">
+      <tr id="headers">
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>HW1</th>
+        <th>HW2</th>
+        <th>Midterm</th>
+        <th>Final Exam</th>
+      </tr>
+      <tr id="row1">
+        <td class="idCell">1</td>
+        <td class="nameCell">Escanor</td>
+        <td id="12"><p id="45"></p></td>
+        <td id="13"></td>
+        <td id="14"></td>
+        <td id="15"></td>
+      </tr>
+      <tr id="row2">
+        <td class="idCell">2</td>
+        <td class="nameCell">Kylar</td>
+        <td id="22"></td>
+        <td id="23"></td>
+        <td id="24"></td>
+        <td id="25"></td>
+      </tr>
+      <tr id="row3">
+        <td class="idCell">3</td>
+        <td class="nameCell">Feanor</td>
+        <td id="32"></td>
+        <td id="33"></td>
+        <td id="34"></td>
+        <td id="35"></td>
+      </tr>
+    </table>
+    <button type="button" onclick="myFunction()">Set/Update grade</button>
+  </div>
+  </body>
+  </html>

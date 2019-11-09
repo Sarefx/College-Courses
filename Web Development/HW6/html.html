@@ -1,0 +1,52 @@
+<!--
+Nikita Koba
+CSCI 3000
+HW6
+The Scrolling Page
+-->
+<DOCTYPE html>
+  <html>
+  <head>
+    <title>The Scrolling page</title>
+    <link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+  <header>
+    <div id="controlPanel">
+      <button type="button" onclick="start()">Start</button>
+      <button type="button" onclick="stop()">Stop</button>
+      <button type="button" onclick="reset()">Reset</button>
+    </div>
+  </header>
+<p id="credits"></p>
+<script>
+  var textCounter=0;
+  for (textCounter=0; textCounter < 90; textCounter++)
+  {
+    document.getElementById("credits").innerHTML += "This is The Scrolling Text " + textCounter + "<br>";
+  }
+  var counter = 1;
+  var timerVar = 0;
+  function start(){
+    timerVar = setInterval(function()
+    {
+      window.scrollTo(0, counter);
+      counter++;
+      if (counter >= 1200)
+      {
+        counter = 0;
+      }
+    }, 5);
+  }
+  function stop(){
+    clearInterval(timerVar);
+  }
+  function reset(){
+    clearInterval(timerVar);
+    timerVar = 0;
+    counter = 1;
+    window.scrollTo(0, 0);
+  }
+</script>
+</body>
+</html>

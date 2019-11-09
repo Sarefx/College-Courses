@@ -1,0 +1,78 @@
+<!--
+Nikita Koba
+CSCI 3000
+HW7
+Guess My Number
+-->
+<DOCTYPE html>
+  <html>
+  <head>
+    <title>Guess My Number</title>
+    <link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+  <header>
+  </header>
+    <div id="mainPanel">
+    <p id="title">Guess my number</p>
+    <hr>
+    <p id="directions">I have a number between 1 and 100</p>
+    <input type="text" name="userNumber" placeholder="Enter Number" id="userInput">
+    <button type="button" onclick="myFunction()"><p id="buttonText">Submit<p></button>
+    <p id="feedback"></p>
+    <p id="message"></p>
+    <p id="score"></p>
+    <hr>
+    <p id="closing">Computer Science @ UNG</p>
+
+    </div>
+<script>
+  var theScore = 50;
+  var randomNumber = Math.floor((Math.random() * 100) + 1);
+
+
+  function myFunction(){
+    var userNumber = document.getElementById("userInput").value;
+    var difference = Math.abs(randomNumber - userNumber);
+    var hint = "";
+
+    //alert("The random number is " + randomNumber + " and user number is " + userNumber + " and the difference is " + difference);
+
+    if (80 <= difference){
+      hint = "You are very cold";
+      theScore -= 5;
+    }
+    if(60 <= difference && difference < 80){
+      hint = "You are cold";
+      theScore -= 5;
+    }
+    if(40 <= difference && difference < 60){
+      hint = "You are warm";
+      theScore -= 5;
+    }
+    if(20 <= difference && difference < 40){
+      hint = "You are hot";
+      theScore -= 5;
+    }
+    if(0 < difference && difference < 20){
+      hint = "You are burning";
+      theScore -= 5;
+    }
+    if(0 == difference){
+      hint = "You got it!";
+    }
+      document.getElementById("feedback").innerHTML = hint;
+      document.getElementById("message").innerHTML = "Try again ...";
+      document.getElementById("score").innerHTML = "POINTS:  " + theScore;
+
+      if (theScore==0){
+        theScore = 50;
+        randomNumber = Math.floor((Math.random() * 100) + 1);
+        document.getElementById("feedback").innerHTML = "Game Over!";
+        document.getElementById("message").innerHTML = "Start Again!";
+
+      }
+  }
+</script>
+</body>
+</html>
